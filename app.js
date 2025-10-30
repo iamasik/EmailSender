@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/.netlify/functions/api', router);
+app.use(router);
 
 // This will run the server locally when you run `npm run dev`
 if (require.main === module) {
