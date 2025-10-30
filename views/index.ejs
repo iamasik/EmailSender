@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Email Sender</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script>
+      function handleFileUpload(input) {
+        const file = input.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          document.querySelector('textarea[name="html"]').value = e.target.result;
+        };
+        reader.readAsText(file);
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Send an Email</h2>
+    <form method="POST" action="/send">
+      <label>Sender Gmail: <input type="email" name="sender" required /></label><br/>
+      <label>App Password: <input type="password" name="appPassword" required /></label><br/>
+      <label>Receiver Email: <input type="email" name="receiver" required /></label><br/>
+      <label>Subject: <input type="text" name="subject" required /></label><br/>
+      <label>HTML Template:
+        <input type="file" accept=".html,.htm" onchange="handleFileUpload(this)" style="margin-top:10px;margin-bottom:10px;" />
+        <br/>
+        <textarea name="html" rows="8" cols="50" required></textarea>
+      </label><br/>
+      <button type="submit">Send Email</button>
+    </form>
+  </body>
+</html>
