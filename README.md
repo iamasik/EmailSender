@@ -78,6 +78,39 @@ http POST https://emailsendergmail.netlify.app/api/send \
   html="<strong>This is an API test email</strong>"
 ```
 
+### Example with JavaScript (Fetch API)
+You can use this API from any front-end application. Here's an example of how to send an email using the Fetch API in JavaScript:
+
+```javascript
+const apiUrl = 'https://emailsendergmail.netlify.app/api/send';
+
+const emailData = {
+  sender: "youremail@gmail.com",
+  appPassword: "YOUR_GOOGLE_APP_PASSWORD",
+  receiver: "receiver@example.com",
+  subject: "Subject from Website",
+  html: "<h1>Hello from the website!</h1><p>This email was sent using the Fetch API.</p>"
+};
+
+fetch(apiUrl, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(emailData)
+})
+.then(response => response.json())
+.then(data => {
+  if (data.success) {
+    console.log('Email sent successfully:', data.message);
+  } else {
+    console.error('Failed to send email:', data.error);
+  }
+})
+.catch(error => {
+  console.error('Error:', error);
+});
+```
 ---
 
 ## Responses
