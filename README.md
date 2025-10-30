@@ -27,12 +27,12 @@ Or in production mode:
 npm start
 ```
 
-App is live at [https://emailsendergmail.netlify.app/](https://emailsendergmail.netlify.app/)
+App is live at [https://yourdomain.com/](https://yourdomain.com/)
 
 ---
 
 ## Web Interface Usage
-Just open `https://emailsendergmail.netlify.app/` in your browser. Fill out the fields or upload your HTML template and send your email instantly.
+Just open `https://yourdomain.com/` in your browser. Fill out the fields or upload your HTML template and send your email instantly.
 
 ---
 
@@ -40,7 +40,7 @@ Just open `https://emailsendergmail.netlify.app/` in your browser. Fill out the 
 
 You can send emails from other software or platforms via HTTP POST to:
 ```
-POST https://emailsendergmail.netlify.app/api/send
+POST https://yourdomain.com/api/send
 ```
 Content-Type: `application/json`
 
@@ -57,7 +57,7 @@ Content-Type: `application/json`
 
 ### Example with curl
 ```bash
-curl -X POST https://emailsendergmail.netlify.app/api/send \
+curl -X POST https://yourdomain.com/api/send \
   -H "Content-Type: application/json" \
   -d '{
     "sender": "youremail@gmail.com",
@@ -70,7 +70,7 @@ curl -X POST https://emailsendergmail.netlify.app/api/send \
 
 ### Example with httpie
 ```bash
-http POST https://emailsendergmail.netlify.app/api/send \
+http POST https://yourdomain.com/api/send \
   sender="youremail@gmail.com" \
   appPassword="YOUR_APP_PASSWORD" \
   receiver="their@email.com" \
@@ -82,7 +82,7 @@ http POST https://emailsendergmail.netlify.app/api/send \
 You can use this API from any front-end application. Here's an example of how to send an email using the Fetch API in JavaScript:
 
 ```javascript
-const apiUrl = 'https://emailsendergmail.netlify.app/api/send';
+const apiUrl = 'https://yourdomain.com/api/send';
 
 const emailData = {
   sender: "youremail@gmail.com",
