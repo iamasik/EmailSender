@@ -27,12 +27,12 @@ Or in production mode:
 npm start
 ```
 
-App will listen by default on [http://localhost:3000](http://localhost:3000)
+App is live at [https://emailsendergmail.netlify.app/](https://emailsendergmail.netlify.app/)
 
 ---
 
 ## Web Interface Usage
-Just open `http://localhost:3000` in your browser. Fill out the fields or upload your HTML template and send your email instantly.
+Just open `https://emailsendergmail.netlify.app/` in your browser. Fill out the fields or upload your HTML template and send your email instantly.
 
 ---
 
@@ -40,7 +40,7 @@ Just open `http://localhost:3000` in your browser. Fill out the fields or upload
 
 You can send emails from other software or platforms via HTTP POST to:
 ```
-POST http://localhost:3000/api/send
+POST https://emailsendergmail.netlify.app/api/send
 ```
 Content-Type: `application/json`
 
@@ -57,7 +57,7 @@ Content-Type: `application/json`
 
 ### Example with curl
 ```bash
-curl -X POST http://localhost:3000/api/send \
+curl -X POST https://emailsendergmail.netlify.app/api/send \
   -H "Content-Type: application/json" \
   -d '{
     "sender": "youremail@gmail.com",
@@ -70,7 +70,7 @@ curl -X POST http://localhost:3000/api/send \
 
 ### Example with httpie
 ```bash
-http POST http://localhost:3000/api/send \
+http POST https://emailsendergmail.netlify.app/api/send \
   sender="youremail@gmail.com" \
   appPassword="YOUR_APP_PASSWORD" \
   receiver="their@email.com" \
