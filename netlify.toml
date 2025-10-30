@@ -5,7 +5,7 @@
   publish = "public"
   
 [functions]
-  included_files = ["node_modules/**"]
+  included_files = ["views/**", "public/**", "node_modules/**"]
 
 [[redirects]]
   from = "/*"
